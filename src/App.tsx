@@ -6,6 +6,7 @@ import { Hero } from './components/Hero';
 import { Programs } from './components/Programs';
 import { QuickLinks } from './components/QuickLinks';
 import { Schedule } from './components/Schedule';
+import { WhatsAppWidget } from './components/WhatsAppWidget';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Schedule />
       <Contact />
       <Footer />
+      <WhatsAppWidget />
     </main>
   );
 }

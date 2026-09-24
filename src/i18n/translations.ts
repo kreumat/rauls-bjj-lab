@@ -71,6 +71,12 @@ export const translations = {
       description: 'Deneme dersine katıl, salonu ve ekibi tanı. Gi’n yoksa sorun değil; ilk ders için gereken her şeyi birlikte planlarız.',
       whatsapp: "WhatsApp'tan Yaz", instagram: 'Instagram', soon: 'Yakında',
     },
+    whatsappWidget: {
+      regionLabel: 'WhatsApp iletişim alanı', open: 'Bize ulaşın', close: 'WhatsApp penceresini kapat',
+      title: 'Nasıl yardımcı olabiliriz?',
+      description: "Dersler, program ve deneme antrenmanı hakkında bilgi almak için bize WhatsApp'tan yazın.",
+      cta: "WhatsApp'ta konuş", note: 'Bağlantı yeni sekmede açılır',
+    },
     footer: { top: 'Yukarı dön', instagram: 'Instagram · Yakında', discipline: 'BRAZILIAN JIU-JITSU' },
   },
   en: {
@@ -140,6 +146,12 @@ export const translations = {
       description: 'Join a trial class and meet the academy and team. No gi yet? No problem; we will plan everything you need for day one.',
       whatsapp: 'Message on WhatsApp', instagram: 'Instagram', soon: 'Coming soon',
     },
+    whatsappWidget: {
+      regionLabel: 'WhatsApp contact', open: 'Contact us', close: 'Close WhatsApp window',
+      title: 'How can we help?',
+      description: 'Message us on WhatsApp for information about classes, schedules and trial sessions.',
+      cta: 'Chat on WhatsApp', note: 'Opens in a new tab',
+    },
     footer: { top: 'Back to top', instagram: 'Instagram · Coming soon', discipline: 'BRAZILIAN JIU-JITSU' },
   },
   ru: {
@@ -208,6 +220,12 @@ export const translations = {
       eyebrow: 'Первый шаг / сейчас', title: 'Запланируйте', outline: 'первое занятие.',
       description: 'Приходите на пробное занятие и познакомьтесь с академией и командой. Нет ги? Не проблема — мы подскажем всё необходимое.',
       whatsapp: 'Написать в WhatsApp', instagram: 'Instagram', soon: 'Скоро',
+    },
+    whatsappWidget: {
+      regionLabel: 'Связь через WhatsApp', open: 'Связаться с нами', close: 'Закрыть окно WhatsApp',
+      title: 'Чем мы можем помочь?',
+      description: 'Напишите нам в WhatsApp, чтобы узнать о занятиях, расписании и пробной тренировке.',
+      cta: 'Открыть WhatsApp', note: 'Откроется в новой вкладке',
     },
     footer: { top: 'Наверх', instagram: 'Instagram · Скоро', discipline: 'БРАЗИЛЬСКОЕ ДЖИУ-ДЖИТСУ' },
   },

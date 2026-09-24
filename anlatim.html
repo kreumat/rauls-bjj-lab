@@ -3,1406 +3,756 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bir BJJ salonu için tanıtım sitesi, üyelik sistemi ve VERBİS/KVKK kapsamlı web sitesi seçeneklerinin sade karşılaştırması.">
-  <meta name="theme-color" content="#111514">
+  <meta name="description" content="Bir BJJ salonu için üç farklı web sitesi kapsamının sade karşılaştırması.">
+  <meta name="theme-color" content="#ffffff">
   <title>Web Sitesi İçin 3 Farklı Seçenek</title>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #0b0e0d;
-      --bg-soft: #111514;
-      --panel: #151a18;
-      --panel-2: #1a201e;
-      --line: rgba(255, 255, 255, 0.10);
-      --line-strong: rgba(255, 255, 255, 0.17);
-      --text: #f4f1e9;
-      --muted: #aeb7b2;
-      --soft: #d5dad7;
-      --sand: #d9b36c;
-      --sand-soft: #f0d99f;
-      --green: #76b796;
-      --blue: #7fa5c8;
-      --red: #ce6f62;
-      --yellow: #e5bc63;
-      --radius-lg: 26px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
-      --shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
-      --max: 1240px;
+      color-scheme: light;
+      --page: #ffffff;
+      --soft: #f7f8fa;
+      --soft-2: #f1f3f5;
+      --text: #17191c;
+      --muted: #626870;
+      --line: #dfe3e8;
+      --line-dark: #cbd1d8;
+      --blue: #2563eb;
+      --blue-soft: #eff6ff;
+      --teal: #0f766e;
+      --teal-soft: #f0fdfa;
+      --amber: #a16207;
+      --amber-soft: #fffbeb;
+      --red: #b42318;
+      --red-soft: #fff4f2;
+      --max: 1180px;
+      --radius: 16px;
     }
 
     * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 88px;
+      scroll-padding-top: 20px;
     }
 
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at 12% 3%, rgba(217, 179, 108, 0.12), transparent 30rem),
-        radial-gradient(circle at 92% 18%, rgba(118, 183, 150, 0.07), transparent 29rem),
-        var(--bg);
+      background: var(--page);
       color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      opacity: 0.18;
-      background-image:
-        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: linear-gradient(to bottom, black, transparent 65%);
-    }
-
     a { color: inherit; }
-
-    button, a { -webkit-tap-highlight-color: transparent; }
-
-    .skip-link {
-      position: fixed;
-      left: 16px;
-      top: -60px;
-      z-index: 100;
-      padding: 12px 16px;
-      border-radius: 10px;
-      background: var(--sand);
-      color: #17140e;
-      font-weight: 800;
-      text-decoration: none;
-      transition: top .2s ease;
-    }
-
-    .skip-link:focus { top: 16px; }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      border-bottom: 1px solid var(--line);
-      background: rgba(11, 14, 13, 0.87);
-      backdrop-filter: blur(18px);
-    }
-
-    .header-inner {
-      width: min(calc(100% - 36px), var(--max));
-      min-height: 68px;
-      margin-inline: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
-      min-width: max-content;
-      text-decoration: none;
-      font-size: .84rem;
-      font-weight: 850;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(217,179,108,.45);
-      border-radius: 10px;
-      background: linear-gradient(145deg, rgba(217,179,108,.22), rgba(217,179,108,.05));
-      color: var(--sand-soft);
-      font-size: .76rem;
-      letter-spacing: 0;
-      box-shadow: inset 0 0 18px rgba(217,179,108,.07);
-    }
-
-    .quick-nav {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .quick-nav::-webkit-scrollbar { display: none; }
-
-    .quick-nav a {
-      padding: 8px 11px;
-      border-radius: 9px;
-      color: var(--muted);
-      font-size: .82rem;
-      font-weight: 700;
-      white-space: nowrap;
-      text-decoration: none;
-    }
-
-    .quick-nav a:hover,
-    .quick-nav a:focus-visible {
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      outline: none;
-    }
-
-    main { overflow: clip; }
+    p, h1, h2, h3, h4 { margin-top: 0; }
 
     .wrap {
       width: min(calc(100% - 36px), var(--max));
       margin-inline: auto;
     }
 
-    .hero {
-      position: relative;
-      padding: clamp(70px, 10vw, 138px) 0 62px;
+    .overview {
+      padding: 32px 0 36px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .hero::after {
-      content: "BJJ";
-      position: absolute;
-      top: 22px;
-      right: max(18px, calc((100vw - var(--max)) / 2));
-      z-index: -1;
-      color: rgba(255,255,255,.018);
-      font-size: clamp(10rem, 25vw, 24rem);
-      font-weight: 950;
-      line-height: .8;
-      letter-spacing: -.08em;
-      user-select: none;
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 24px;
     }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin: 0 0 20px;
-      color: var(--sand-soft);
-      font-size: .76rem;
-      font-weight: 850;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 2px;
-      background: var(--sand);
-    }
-
-    h1, h2, h3, h4, p { margin-top: 0; }
 
     h1 {
-      max-width: 880px;
-      margin-bottom: 24px;
-      font-size: clamp(2.85rem, 7vw, 6.2rem);
-      line-height: .98;
-      letter-spacing: -.058em;
-      text-wrap: balance;
+      margin-bottom: 0;
+      font-size: clamp(2.1rem, 4.2vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -.045em;
     }
 
-    .hero-lead {
-      max-width: 790px;
-      margin-bottom: 34px;
-      color: var(--soft);
-      font-size: clamp(1.02rem, 2vw, 1.28rem);
-      line-height: 1.7;
+    .intro p {
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-size: .98rem;
     }
 
-    .hero-meta {
+    .option-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .option-card {
+      --accent: var(--blue);
+      --tint: var(--blue-soft);
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      min-width: 0;
+      flex-direction: column;
+      padding: 20px;
+      border: 1px solid var(--line-dark);
+      border-top: 4px solid var(--accent);
+      border-radius: var(--radius);
+      background: #fff;
     }
 
-    .meta-pill {
+    .option-card.two { --accent: var(--teal); --tint: var(--teal-soft); }
+    .option-card.three { --accent: var(--amber); --tint: var(--amber-soft); }
+
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .number {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 9px 13px;
-      border: 1px solid var(--line);
+      justify-content: center;
+      min-width: 30px;
+      height: 30px;
+      padding: 0 8px;
+      border-radius: 8px;
+      background: var(--tint);
+      color: var(--accent);
+      font-size: .76rem;
+      font-weight: 850;
+    }
+
+    .cost {
+      display: inline-flex;
+      padding: 6px 9px;
       border-radius: 999px;
-      background: rgba(255,255,255,.025);
-      color: var(--muted);
-      font-size: .82rem;
-      font-weight: 650;
-    }
-
-    .meta-pill::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--sand);
-      box-shadow: 0 0 0 4px rgba(217,179,108,.12);
-    }
-
-    .choice-overview {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-bottom: 82px;
-    }
-
-    .choice-card {
-      position: relative;
-      display: flex;
-      min-height: 305px;
-      flex-direction: column;
-      overflow: hidden;
-      padding: 25px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(160deg, rgba(255,255,255,.052), rgba(255,255,255,.018));
-      box-shadow: var(--shadow);
-      text-decoration: none;
-    }
-
-    .choice-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto auto 0;
-      width: 100%;
-      height: 3px;
-      background: var(--accent);
-    }
-
-    .choice-card:hover,
-    .choice-card:focus-visible {
-      border-color: color-mix(in srgb, var(--accent) 45%, transparent);
-      outline: none;
-      transform: translateY(-2px);
-    }
-
-    .choice-card { transition: transform .2s ease, border-color .2s ease; }
-    .choice-card.one { --accent: var(--green); }
-    .choice-card.two { --accent: var(--blue); }
-    .choice-card.three { --accent: var(--sand); }
-
-    .choice-number {
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 22px;
-      border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
-      border-radius: 13px;
-      background: color-mix(in srgb, var(--accent) 12%, transparent);
+      background: var(--tint);
       color: var(--accent);
-      font-size: 1rem;
-      font-weight: 900;
-    }
-
-    .choice-card h2 {
-      margin-bottom: 8px;
-      font-size: clamp(1.3rem, 2.4vw, 1.75rem);
-      line-height: 1.18;
-      letter-spacing: -.025em;
-    }
-
-    .choice-card p {
-      margin-bottom: 23px;
-      color: var(--muted);
-      font-size: .93rem;
-    }
-
-    .choice-bottom {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 12px;
-      margin-top: auto;
-    }
-
-    .price-label {
-      color: var(--muted);
-      font-size: .69rem;
+      font-size: .73rem;
       font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
+      white-space: nowrap;
     }
 
-    .price-level {
-      display: block;
-      margin-top: 4px;
-      color: var(--accent);
-      font-size: 1.05rem;
-      font-weight: 900;
+    .option-card h2 {
+      margin-bottom: 5px;
+      font-size: clamp(1.15rem, 2vw, 1.43rem);
+      line-height: 1.2;
+      letter-spacing: -.02em;
     }
 
-    .arrow {
-      width: 37px;
-      height: 37px;
+    .tagline {
+      min-height: 42px;
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+
+    .facts {
       display: grid;
-      place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      color: var(--text);
-      font-size: 1.15rem;
-    }
-
-    .option {
-      position: relative;
-      padding: 86px 0;
+      margin: 0 0 14px;
       border-top: 1px solid var(--line);
     }
 
-    .option-head {
+    .fact {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 290px;
-      gap: 50px;
-      align-items: end;
-      margin-bottom: 42px;
+      grid-template-columns: 92px 1fr;
+      gap: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .78rem;
     }
 
-    .option-kicker {
-      margin-bottom: 13px;
+    .fact dt { color: var(--muted); }
+    .fact dd { margin: 0; font-weight: 750; }
+
+    .best-for {
+      margin: auto 0 0;
+      padding: 10px 11px;
+      border-radius: 10px;
+      background: var(--tint);
+      color: #34383e;
+      font-size: .78rem;
+      line-height: 1.45;
+    }
+
+    .best-for strong { color: var(--accent); }
+
+    .matrix-shell {
+      overflow-x: auto;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+    }
+
+    .matrix {
+      width: 100%;
+      min-width: 800px;
+      border-collapse: collapse;
+      table-layout: fixed;
+      font-size: .75rem;
+      text-align: left;
+    }
+
+    .matrix th,
+    .matrix td {
+      padding: 8px 12px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      vertical-align: middle;
+    }
+
+    .matrix tr:last-child th,
+    .matrix tr:last-child td { border-bottom: 0; }
+
+    .matrix th:last-child,
+    .matrix td:last-child { border-right: 0; }
+
+    .matrix thead th {
+      background: var(--soft);
+      color: #34383e;
+      font-size: .72rem;
+    }
+
+    .matrix thead th:first-child,
+    .matrix tbody th { width: 172px; }
+
+    .matrix tbody th {
+      background: #fbfbfc;
+      color: #454a51;
+      font-weight: 700;
+    }
+
+    .yes { color: #087443; font-weight: 800; }
+    .no { color: var(--red); font-weight: 800; }
+    .maybe { color: var(--amber); font-weight: 800; }
+
+    .decision-line {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      margin: 14px 0 0;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--soft);
+      color: #3f444b;
+      font-size: .8rem;
+    }
+
+    .decision-line strong { color: var(--text); }
+
+    .details-area {
+      padding: 52px 0 64px;
+      background: #fbfbfc;
+    }
+
+    .details-heading {
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    .details-heading h2 {
+      margin-bottom: 6px;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      letter-spacing: -.035em;
+    }
+
+    .details-heading p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      --accent: var(--blue);
+      --tint: var(--blue-soft);
+      overflow: hidden;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    details.two { --accent: var(--teal); --tint: var(--teal-soft); }
+    details.three { --accent: var(--amber); --tint: var(--amber-soft); }
+
+    summary {
+      display: grid;
+      grid-template-columns: auto 1fr auto auto;
+      gap: 14px;
+      align-items: center;
+      padding: 18px 20px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary:hover { background: #fcfcfd; }
+
+    .summary-title {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .summary-sub {
+      color: var(--muted);
+      font-size: .79rem;
+    }
+
+    .open-label {
       color: var(--accent);
       font-size: .75rem;
-      font-weight: 900;
-      letter-spacing: .16em;
-      text-transform: uppercase;
+      font-weight: 800;
     }
 
-    .option-head h2 {
-      max-width: 840px;
-      margin-bottom: 12px;
-      font-size: clamp(2rem, 4.7vw, 4.15rem);
-      line-height: 1.02;
-      letter-spacing: -.05em;
-      text-wrap: balance;
-    }
-
-    .option-subtitle {
-      max-width: 800px;
-      margin: 0;
-      color: var(--muted);
-      font-size: clamp(1rem, 2vw, 1.17rem);
-    }
-
-    .cost-stamp {
-      padding: 19px 20px;
-      border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
-      border-radius: var(--radius-md);
-      background: color-mix(in srgb, var(--accent) 8%, transparent);
-    }
-
-    .cost-stamp span {
-      display: block;
-      margin-bottom: 7px;
-      color: var(--muted);
-      font-size: .68rem;
-      font-weight: 850;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .cost-stamp strong {
+    .chevron {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--tint);
       color: var(--accent);
-      font-size: 1.05rem;
+      font-weight: 900;
+      transition: transform .2s ease;
     }
 
-    .option-one { --accent: var(--green); }
-    .option-two { --accent: var(--blue); }
-    .option-three { --accent: var(--sand); }
+    details[open] .chevron { transform: rotate(45deg); }
 
-    .lead-box {
-      margin-bottom: 18px;
-      padding: clamp(23px, 4vw, 36px);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 9%, var(--panel)), var(--panel));
-      color: var(--soft);
-      font-size: clamp(1rem, 1.8vw, 1.13rem);
-      box-shadow: var(--shadow);
+    .detail-body {
+      padding: 0 20px 22px;
+      border-top: 1px solid var(--line);
     }
 
-    .lead-box p:last-child { margin-bottom: 0; }
+    .detail-lead {
+      max-width: 930px;
+      margin: 20px 0;
+      color: #41464d;
+      font-size: .91rem;
+    }
 
     .content-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      gap: 12px;
     }
 
-    .panel {
-      padding: clamp(22px, 3vw, 30px);
+    .box {
+      min-width: 0;
+      padding: 17px;
       border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: var(--panel);
+      border-radius: 12px;
+      background: #fff;
     }
 
-    .content-grid > .wide { grid-column: 1 / -1; }
+    .box.full { grid-column: 1 / -1; }
 
-    .panel h3 {
-      margin-bottom: 17px;
-      font-size: 1.12rem;
-      letter-spacing: -.018em;
+    .box h3 {
+      margin-bottom: 9px;
+      font-size: .94rem;
     }
 
-    .panel h4 {
-      margin: 24px 0 8px;
-      color: var(--soft);
-      font-size: .98rem;
+    .box h4 {
+      margin: 16px 0 6px;
+      font-size: .84rem;
     }
 
-    .panel p { color: var(--muted); }
-    .panel p:last-child { margin-bottom: 0; }
+    .box p {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: .82rem;
+    }
 
-    .feature-list,
-    .check-list,
-    .plain-list {
+    .box p:last-child { margin-bottom: 0; }
+
+    ul.clean {
       display: grid;
-      gap: 10px;
+      gap: 6px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    .feature-list.two-cols {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    ul.clean.two-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 22px; }
 
-    .feature-list li,
-    .check-list li,
-    .plain-list li {
+    ul.clean li {
       position: relative;
-      padding-left: 24px;
-      color: var(--soft);
-      font-size: .93rem;
+      padding-left: 15px;
+      color: #454a51;
+      font-size: .81rem;
     }
 
-    .feature-list li::before,
-    .check-list li::before {
-      content: "✓";
-      position: absolute;
-      left: 0;
-      top: .05em;
-      color: var(--accent);
-      font-weight: 950;
-    }
-
-    .plain-list li::before {
+    ul.clean li::before {
       content: "";
       position: absolute;
-      left: 3px;
-      top: .68em;
-      width: 7px;
-      height: 7px;
-      border-radius: 2px;
+      left: 0;
+      top: .62em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
       background: var(--accent);
-      opacity: .8;
     }
 
-    .plain-list.cost-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 11px 28px;
-      margin-top: 22px;
-    }
-
-    .mini-label {
-      display: block;
-      margin: 0 0 10px;
-      color: var(--accent);
-      font-size: .69rem;
-      font-weight: 900;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .split-costs {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 26px;
-    }
-
-    .definition-grid {
+    .terms {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      grid-column: 1 / -1;
-    }
-
-    .definition {
-      padding: 24px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: var(--panel);
-    }
-
-    .definition-term {
-      display: flex;
-      align-items: center;
       gap: 10px;
-      margin-bottom: 11px;
-      color: var(--text);
-      font-weight: 850;
-    }
-
-    .term-icon {
-      width: 30px;
-      height: 30px;
-      display: grid;
-      place-items: center;
-      flex: 0 0 auto;
-      border-radius: 9px;
-      background: color-mix(in srgb, var(--accent) 13%, transparent);
-      color: var(--accent);
-      font-size: .8rem;
-      font-weight: 900;
-    }
-
-    .definition p {
-      margin-bottom: 12px;
-      color: var(--muted);
-      font-size: .91rem;
-    }
-
-    .definition p:last-child { margin-bottom: 0; }
-
-    .callout {
-      padding: 22px 24px;
-      border: 1px solid color-mix(in srgb, var(--tone) 36%, transparent);
-      border-left: 4px solid var(--tone);
-      border-radius: var(--radius-md);
-      background: color-mix(in srgb, var(--tone) 8%, var(--panel));
-    }
-
-    .callout strong.callout-title {
-      display: block;
-      margin-bottom: 8px;
-      color: color-mix(in srgb, var(--tone) 78%, white);
-      font-size: 1.05rem;
-    }
-
-    .callout p { margin-bottom: 0; color: var(--soft); }
-    .callout.warning { --tone: var(--yellow); }
-    .callout.info { --tone: var(--blue); }
-    .callout.success { --tone: var(--green); }
-    .callout.strong { --tone: var(--sand); }
-
-    .legal-card {
       grid-column: 1 / -1;
-      padding: clamp(24px, 4vw, 38px);
-      border: 1px solid rgba(127, 165, 200, .32);
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(145deg, rgba(127,165,200,.11), transparent 48%),
-        var(--panel);
     }
 
-    .legal-card h3 {
-      margin-bottom: 10px;
-      font-size: clamp(1.35rem, 2.7vw, 1.9rem);
+    .term {
+      padding: 15px;
+      border-radius: 11px;
+      background: var(--soft);
     }
 
-    .legal-intro {
-      max-width: 870px;
-      margin-bottom: 24px;
-      color: var(--soft);
-      font-size: 1.02rem;
+    .term strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: .85rem;
     }
 
-    .legal-card .plain-list {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 13px 28px;
-      margin-bottom: 26px;
+    .term p { margin: 0; color: var(--muted); font-size: .78rem; }
+
+    .notice {
+      padding: 15px 16px;
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      background: var(--tint);
     }
 
-    .legal-card .plain-list li::before { background: var(--blue); }
-
-    .stack { display: grid; gap: 14px; }
-
-    .scenario-box {
-      padding: clamp(26px, 5vw, 46px);
-      border: 1px solid rgba(217,179,108,.38);
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(135deg, rgba(217,179,108,.14), rgba(217,179,108,.025) 55%),
-        var(--panel);
-      box-shadow: var(--shadow);
+    .notice strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--accent);
+      font-size: .86rem;
     }
 
-    .scenario-box .big-statement {
-      max-width: 850px;
-      margin-bottom: 14px;
-      color: var(--sand-soft);
-      font-size: clamp(1.65rem, 4vw, 3.05rem);
-      font-weight: 900;
-      line-height: 1.13;
-      letter-spacing: -.035em;
-      text-wrap: balance;
-    }
-
-    .scenario-box p:last-child { margin-bottom: 0; }
+    .notice p { margin: 0; color: #4b5057; font-size: .8rem; }
 
     .thresholds {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
-      gap: 16px;
-      align-items: stretch;
-      margin: 25px 0;
+      gap: 10px;
+      align-items: center;
+      margin: 12px 0;
     }
 
     .threshold {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: rgba(0,0,0,.18);
-    }
-
-    .threshold strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--sand-soft);
-      font-size: clamp(1.4rem, 3vw, 2.1rem);
-      line-height: 1.1;
-    }
-
-    .threshold span { color: var(--muted); font-size: .88rem; }
-
-    .and-badge {
-      align-self: center;
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--sand);
-      color: #1b170f;
-      font-size: .74rem;
-      font-weight: 950;
-      letter-spacing: .07em;
-    }
-
-    .free-banner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      grid-column: 1 / -1;
-      padding: 28px clamp(24px, 4vw, 38px);
-      border: 1px solid rgba(118,183,150,.38);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(120deg, rgba(118,183,150,.14), rgba(118,183,150,.03));
-    }
-
-    .free-banner span {
-      color: var(--green);
-      font-size: .71rem;
-      font-weight: 900;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .free-banner strong {
-      display: block;
-      max-width: 760px;
-      margin-top: 5px;
-      color: #d8f0e3;
-      font-size: clamp(1.25rem, 3vw, 2rem);
-      line-height: 1.22;
-      letter-spacing: -.025em;
-    }
-
-    .free-icon {
-      width: 64px;
-      height: 64px;
-      display: grid;
-      place-items: center;
-      flex: 0 0 auto;
-      border: 1px solid rgba(118,183,150,.4);
-      border-radius: 50%;
-      color: var(--green);
-      font-size: 1.8rem;
-      font-weight: 800;
-    }
-
-    .compare-section {
-      padding: 98px 0 74px;
-      border-top: 1px solid var(--line);
-      background: linear-gradient(to bottom, rgba(255,255,255,.017), transparent 36%);
-    }
-
-    .section-heading {
-      max-width: 770px;
-      margin-bottom: 34px;
-    }
-
-    .section-heading h2 {
-      margin-bottom: 13px;
-      font-size: clamp(2.1rem, 5vw, 4.2rem);
-      line-height: 1.02;
-      letter-spacing: -.05em;
-    }
-
-    .section-heading p { color: var(--muted); font-size: 1.05rem; }
-
-    .table-shell {
-      overflow-x: auto;
-      border: 1px solid var(--line-strong);
-      border-radius: var(--radius-lg);
-      background: var(--panel);
-      box-shadow: var(--shadow);
-      scrollbar-color: var(--sand) var(--panel);
-    }
-
-    .compare-table {
-      width: 100%;
-      min-width: 900px;
-      border-collapse: separate;
-      border-spacing: 0;
-      text-align: left;
-    }
-
-    .compare-table th,
-    .compare-table td {
-      padding: 19px 20px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      vertical-align: top;
-    }
-
-    .compare-table tr:last-child th,
-    .compare-table tr:last-child td { border-bottom: 0; }
-
-    .compare-table th:last-child,
-    .compare-table td:last-child { border-right: 0; }
-
-    .compare-table thead th {
-      position: sticky;
-      top: 0;
-      z-index: 2;
-      background: #1c211f;
-      color: var(--text);
-      font-size: .91rem;
-      line-height: 1.35;
-    }
-
-    .compare-table thead th:first-child { color: var(--muted); }
-    .compare-table thead th:nth-child(2) { box-shadow: inset 0 3px var(--green); }
-    .compare-table thead th:nth-child(3) { box-shadow: inset 0 3px var(--blue); }
-    .compare-table thead th:nth-child(4) { box-shadow: inset 0 3px var(--sand); }
-
-    .compare-table tbody th {
-      width: 190px;
-      background: #181d1b;
-      color: var(--soft);
-      font-size: .87rem;
-    }
-
-    .compare-table td {
-      width: calc((100% - 190px) / 3);
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-weight: 800;
-    }
-
-    .status::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: currentColor;
-    }
-
-    .status.yes { color: var(--green); }
-    .status.no { color: #d5897e; }
-    .status.maybe { color: var(--yellow); }
-
-    .decision-note {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 18px;
-      align-items: start;
-      margin-top: 22px;
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: rgba(255,255,255,.022);
-    }
-
-    .decision-note .number {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
+      padding: 12px;
+      border: 1px solid #ead8aa;
       border-radius: 10px;
-      background: rgba(217,179,108,.13);
-      color: var(--sand-soft);
-      font-weight: 900;
+      background: #fff;
+      text-align: center;
     }
 
-    .decision-note p { margin: 0; color: var(--soft); }
+    .threshold strong { display: block; color: var(--amber); font-size: 1rem; }
+    .threshold span { color: var(--muted); font-size: .72rem; }
+    .and { color: var(--amber); font-size: .72rem; font-weight: 900; }
+
+    .free {
+      color: #087443 !important;
+      font-weight: 850;
+    }
 
     footer {
-      padding: 34px 0 50px;
+      padding: 22px 0 34px;
       border-top: 1px solid var(--line);
-      background: #090b0a;
+      background: #fff;
     }
 
-    .disclaimer {
-      max-width: 980px;
+    footer p {
+      max-width: 960px;
       margin: 0;
-      color: #858e89;
-      font-size: .78rem;
-      line-height: 1.65;
+      color: #747a82;
+      font-size: .72rem;
+      line-height: 1.6;
     }
 
-    .footer-line {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 18px;
-      color: var(--soft);
-      font-size: .73rem;
-      font-weight: 900;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .footer-line::after {
-      content: "";
-      height: 1px;
-      flex: 1;
-      background: var(--line);
-    }
-
-    @media (max-width: 940px) {
-      .quick-nav a:not(:last-child) { display: none; }
-      .choice-overview { grid-template-columns: 1fr; }
-      .choice-card { min-height: 0; }
-      .option-head { grid-template-columns: 1fr; gap: 24px; }
-      .cost-stamp { max-width: 380px; }
-      .definition-grid { grid-template-columns: 1fr; }
-      .legal-card .plain-list { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 700px) {
-      :root { --radius-lg: 21px; --radius-md: 16px; }
-      html { scroll-padding-top: 72px; }
-      .header-inner { width: min(calc(100% - 28px), var(--max)); min-height: 62px; }
-      .brand { font-size: .73rem; }
-      .brand-mark { width: 31px; height: 31px; }
-      .quick-nav a { padding-inline: 8px; }
-      .wrap { width: min(calc(100% - 28px), var(--max)); }
-      .hero { padding-top: 64px; }
-      .hero::after { display: none; }
-      .hero-meta { align-items: stretch; flex-direction: column; }
-      .choice-overview { margin-bottom: 54px; }
-      .option { padding: 64px 0; }
+    @media (max-width: 880px) {
+      .intro { grid-template-columns: 1fr; gap: 10px; }
+      .option-cards { grid-template-columns: 1fr; }
+      .tagline { min-height: 0; }
       .content-grid { grid-template-columns: 1fr; }
-      .content-grid > .wide, .legal-card, .free-banner { grid-column: auto; }
-      .feature-list.two-cols { grid-template-columns: 1fr; }
-      .plain-list.cost-grid { grid-template-columns: 1fr; }
-      .split-costs { grid-template-columns: 1fr; }
-      .thresholds { grid-template-columns: 1fr; }
-      .and-badge { justify-self: center; margin: -3px 0; }
-      .free-banner { align-items: flex-start; }
-      .free-icon { width: 48px; height: 48px; font-size: 1.3rem; }
-      .compare-section { padding-top: 72px; }
-      .decision-note { grid-template-columns: 1fr; }
+      .box.full { grid-column: auto; }
+      .terms { grid-template-columns: 1fr; grid-column: auto; }
     }
 
-    @media (max-width: 420px) {
-      h1 { font-size: 2.55rem; }
-      .brand > span:last-child { display: none; }
-      .free-icon { display: none; }
+    @media (max-width: 620px) {
+      .wrap { width: min(calc(100% - 24px), var(--max)); }
+      .overview { padding-top: 22px; }
+      h1 { font-size: 2.25rem; }
+      .intro p { font-size: .88rem; }
+      summary { grid-template-columns: auto 1fr auto; padding: 15px; }
+      .summary-sub, .open-label { display: none; }
+      .detail-body { padding-inline: 14px; }
+      ul.clean.two-cols { grid-template-columns: 1fr; }
+      .thresholds { grid-template-columns: 1fr; }
+      .and { text-align: center; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; }
+      *, *::before, *::after { transition: none !important; }
     }
 
     @media print {
-      :root { color-scheme: light; }
-      body { background: white; color: #111; }
-      body::before, .site-header, .hero::after { display: none; }
-      .wrap { width: 100%; }
-      .hero { padding: 20px 0 30px; }
-      .choice-overview, .content-grid, .definition-grid { gap: 8px; }
-      .choice-card, .panel, .definition, .lead-box, .legal-card, .scenario-box, .free-banner, .table-shell, .cost-stamp {
-        background: white !important;
-        color: #111 !important;
-        border-color: #bbb !important;
-        box-shadow: none !important;
-      }
-      p, li, .panel p, .definition p, .choice-card p, .option-subtitle, .hero-lead, .disclaimer { color: #333 !important; }
-      .option, .compare-section { padding: 35px 0; break-inside: avoid; }
-      .compare-table { min-width: 0; }
-      .compare-table th, .compare-table td { padding: 9px; color: #222 !important; background: white !important; }
-      .scenario-box .big-statement, h1, h2, h3, h4 { color: #111 !important; }
+      details { break-inside: avoid; }
+      details > .detail-body { display: block; }
+      .matrix-shell { overflow: visible; }
+      .matrix { min-width: 0; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#icerik">İçeriğe geç</a>
-
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="brand" href="#ust" aria-label="Sayfanın başına dön">
-        <span class="brand-mark">BJJ</span>
-        <span>Web Sitesi Yol Haritası</span>
-      </a>
-      <nav class="quick-nav" aria-label="Sayfa içi menü">
-        <a href="#secenek-1">01</a>
-        <a href="#secenek-2">02</a>
-        <a href="#secenek-3">03</a>
-        <a href="#karsilastirma">Karşılaştır</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="icerik">
-    <section class="hero" id="ust">
+  <main>
+    <section class="overview" aria-labelledby="page-title">
       <div class="wrap">
-        <p class="eyebrow">BJJ salonları için sade rehber</p>
-        <h1>Web Sitesi İçin<br>3 Farklı Seçenek</h1>
-        <p class="hero-lead">Siteyi ne kadar kapsamlı kullanmak istediğinize göre üç farklı yol izleyebiliriz. Aşağıda en basit ve düşük maliyetli seçenekten, üyelik sistemi ve daha kapsamlı yasal süreçler içeren seçeneğe kadar farkları görebilirsiniz.</p>
-        <div class="hero-meta" aria-label="Sayfanın özellikleri">
-          <span class="meta-pill">Teknik olmayan, anlaşılır anlatım</span>
-          <span class="meta-pill">Maliyet ve bakım karşılaştırması</span>
-          <span class="meta-pill">KVKK ve VERBİS özeti</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap choice-overview" aria-label="Üç seçeneğe hızlı bakış">
-      <a class="choice-card one" href="#secenek-1">
-        <span class="choice-number">01</span>
-        <h2>Basit Tanıtım Sitesi</h2>
-        <p>Profesyonel görünürlük ve WhatsApp iletişimi. Hesap, rezervasyon veya veritabanı yok.</p>
-        <span class="choice-bottom">
-          <span><span class="price-label">Maliyet seviyesi</span><strong class="price-level">₺ — En düşük</strong></span>
-          <span class="arrow" aria-hidden="true">↓</span>
-        </span>
-      </a>
-
-      <a class="choice-card two" href="#secenek-2">
-        <span class="choice-number">02</span>
-        <h2>Üyelik Sistemli Web Sitesi</h2>
-        <p>Üye hesabı, giriş, ders rezervasyonu ve yönetim paneli gibi aktif özellikler.</p>
-        <span class="choice-bottom">
-          <span><span class="price-label">Maliyet seviyesi</span><strong class="price-level">₺₺ — Orta</strong></span>
-          <span class="arrow" aria-hidden="true">↓</span>
-        </span>
-      </a>
-
-      <a class="choice-card three" href="#secenek-3">
-        <span class="choice-number">03</span>
-        <h2>Üyelik + VERBİS / Kapsamlı KVKK</h2>
-        <p>Üyelikli yapıya ek olarak işletmenin durumuna göre daha kapsamlı veri uyumluluğu.</p>
-        <span class="choice-bottom">
-          <span><span class="price-label">Maliyet seviyesi</span><strong class="price-level">₺₺₺ — Değişken</strong></span>
-          <span class="arrow" aria-hidden="true">↓</span>
-        </span>
-      </a>
-    </section>
-
-    <section class="option option-one" id="secenek-1">
-      <div class="wrap">
-        <div class="option-head">
-          <div>
-            <p class="option-kicker">Seçenek 01 · Sadelik</p>
-            <h2>1. Basit Tanıtım Sitesi</h2>
-            <p class="option-subtitle">En düşük maliyetli ve en kolay seçenek</p>
-          </div>
-          <div class="cost-stamp">
-            <span>Maliyet seviyesi</span>
-            <strong>₺ — En düşük</strong>
-          </div>
+        <div class="intro">
+          <h1 id="page-title">Web Sitesi İçin<br>3 Farklı Seçenek</h1>
+          <p>İhtiyacınıza göre en basit tanıtım sitesinden, üyelik sistemi ve kapsamlı kişisel veri süreçlerine kadar üç farklı yol bulunur. Önce kısa özeti karşılaştırın; ayrıntıları isterseniz aşağıdan açıp okuyun.</p>
         </div>
 
-        <div class="lead-box">
-          <p>Bu seçenekte site tamamen tanıtım amaçlı çalışır. Kullanıcı hesabı, giriş sistemi veya üyelerin bilgilerinin tutulduğu bir veritabanı bulunmaz.</p>
-          <p>Bir kişi salonla iletişime geçmek istediğinde sitede form doldurmak veya hesap açmak yerine WhatsApp butonuna basar ve doğrudan salonla iletişime geçer.</p>
-        </div>
-
-        <div class="content-grid">
-          <article class="panel">
-            <span class="mini-label">Sitede neler olabilir?</span>
-            <h3>İhtiyaç duyulan temel bilgiler</h3>
-            <ul class="feature-list two-cols">
-              <li>Salon hakkında bilgiler</li>
-              <li>Eğitmenler</li>
-              <li>Ders programı</li>
-              <li>Fotoğraflar</li>
-              <li>Adres ve iletişim bilgileri</li>
-              <li>Fiyat bilgileri</li>
-              <li>Sosyal medya bağlantıları</li>
-              <li>“WhatsApp’tan İletişime Geç” butonu</li>
-            </ul>
-          </article>
-
-          <article class="panel">
-            <span class="mini-label">Nasıl çalışır?</span>
-            <h3>Aylık sunucu zorunlu değildir</h3>
-            <p>Site, ücretsiz bir <strong>statik web barındırma</strong> hizmetinde tutulabilir. Günlük dille: Sayfalar hazır biçimde yayınlanır; üyelik gibi arka planda çalışan bir sisteme ihtiyaç duyulmaz.</p>
-            <p>Bu nedenle siteyi internette açık tutmak için ayrıca aylık bir sunucu kiralamak gerekmez.</p>
-          </article>
-
-          <article class="panel wide">
-            <span class="mini-label">Masraflar</span>
-            <div class="split-costs">
-              <div>
-                <h3>Zorunlu</h3>
-                <ul class="plain-list">
-                  <li>Yıllık alan adı (domain) ücreti <small>— sitenin internetteki adresi</small></li>
-                </ul>
-              </div>
-              <div>
-                <h3>Genellikle gerekmez</h3>
-                <ul class="plain-list">
-                  <li>Aylık sunucu / VPS ücreti</li>
-                  <li>Veritabanı ücreti</li>
-                  <li>Kullanıcı hesabı altyapısı</li>
-                  <li>Üyelik sistemi için ek güvenlik servisleri</li>
-                </ul>
-              </div>
+        <div class="option-cards">
+          <article class="option-card one">
+            <div class="card-head">
+              <span class="number">1</span>
+              <span class="cost">₺ En düşük</span>
             </div>
+            <h2>Basit Tanıtım Sitesi</h2>
+            <p class="tagline">Salon görünür olur; iletişim WhatsApp üzerinden yürür.</p>
+            <dl class="facts">
+              <div class="fact"><dt>Üye hesabı</dt><dd class="no">Yok</dd></div>
+              <div class="fact"><dt>Veritabanı</dt><dd class="no">Yok</dd></div>
+              <div class="fact"><dt>Aylık gider</dt><dd>Yok / çok düşük</dd></div>
+            </dl>
+            <p class="best-for"><strong>Uygun:</strong> İnternette profesyonel görünmek ve müşterileri WhatsApp’a yönlendirmek yeterliyse.</p>
           </article>
 
-          <article class="panel">
-            <span class="mini-label">Avantajlar</span>
-            <h3>Az maliyet, az bakım</h3>
-            <ul class="check-list">
-              <li>En ekonomik seçenektir.</li>
-              <li>Çok az bakım gerektirir.</li>
-              <li>Kullanıcı hesabı veya veritabanı olmadığı için güvenlik yönetimi daha basittir.</li>
-              <li>Salonun internette profesyonel görünmesi için yeterlidir.</li>
-              <li>WhatsApp üzerinden hızlı iletişim sağlar.</li>
-            </ul>
-          </article>
-
-          <aside class="callout warning">
-            <strong class="callout-title">Sınırı nedir?</strong>
-            <p>Üyeler siteye giriş yapamaz. Ders rezervasyonu, kişiye özel panel, üyelik takibi gibi özellikler bulunmaz.</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="option option-two" id="secenek-2">
-      <div class="wrap">
-        <div class="option-head">
-          <div>
-            <p class="option-kicker">Seçenek 02 · İşlevsellik</p>
-            <h2>2. Üyelik Sistemli Web Sitesi</h2>
-            <p class="option-subtitle">Üyelerin hesap açabildiği ve siteyi aktif olarak kullanabildiği sistem</p>
-          </div>
-          <div class="cost-stamp">
-            <span>Maliyet seviyesi</span>
-            <strong>₺₺ — Orta</strong>
-          </div>
-        </div>
-
-        <div class="lead-box">
-          <p>Bu seçenekte site artık yalnızca internette duran bir tanıtım sayfası değildir. Arka planda çalışan bir sistem bulunur. Üyeler hesap oluşturabilir, giriş yapabilir ve kendilerine özel özellikleri kullanabilir.</p>
-        </div>
-
-        <div class="content-grid">
-          <article class="panel wide">
-            <span class="mini-label">Örnek özellikler</span>
-            <h3>Üye ve salon yönetimi tek yerde</h3>
-            <ul class="feature-list two-cols">
-              <li>Kullanıcı hesabı oluşturma</li>
-              <li>Giriş / çıkış sistemi</li>
-              <li>Şifre yenileme</li>
-              <li>Üye profili</li>
-              <li>Ders programını görüntüleme</li>
-              <li>Ders rezervasyonu</li>
-              <li>Üyeliğin veya paketin durumunu görüntüleme</li>
-              <li>Yönetici paneli</li>
-              <li>Üyeleri yönetme</li>
-              <li>Duyurular</li>
-              <li>İleride yeni özellikler ekleyebilme</li>
-            </ul>
-          </article>
-
-          <div class="definition-grid" aria-label="Üyelik sistemi için gerekenler">
-            <article class="definition">
-              <div class="definition-term"><span class="term-icon">01</span>Sunucu / VPS</div>
-              <p>Sitenin üyelik, giriş ve rezervasyon gibi işlemleri yapabilmesi için arka planda sürekli çalışan bir sisteme ihtiyaç vardır. Bunun için aylık veya yıllık ücretli bir sunucu kullanılabilir.</p>
-              <p><strong>VPS tek seçenek değildir:</strong> Bazı durumlarda hazır bulut servisleri de kullanılabilir. En ekonomik ve kolay yöntem proje hazırlanırken seçilir.</p>
-            </article>
-            <article class="definition">
-              <div class="definition-term"><span class="term-icon">02</span>Veritabanı</div>
-              <p>Üyelerin hesaplarının ve gerekli bilgilerin güvenli şekilde tutulduğu sistemdir.</p>
-              <p>Sunucunun içinde kurulabilir veya daha kolay yönetim ve ek güvenlik için ücretli, hazır bir veritabanı hizmeti kullanılabilir.</p>
-            </article>
-            <article class="definition">
-              <div class="definition-term"><span class="term-icon">03</span>Güvenlik</div>
-              <p>Üye bilgileri tutulduğu için güvenlik çok daha önemlidir. Şifreler okunabilir şekilde saklanmamalı, site HTTPS kullanmalı, yetkisiz erişim önlenmeli ve sistem güncel tutulmalıdır.</p>
-            </article>
-          </div>
-
-          <article class="legal-card">
-            <span class="mini-label">Kişisel veriler · KVKK</span>
-            <h3>Üye bilgileri tutuluyorsa ne değişir?</h3>
-            <p class="legal-intro">Üyelerin adı, soyadı, e-posta adresi veya telefon numarası gibi bilgiler sistemde tutuluyorsa kişisel veri işlenmiş olur. Bu nedenle KVKK kapsamında bazı yükümlülüklerin yerine getirilmesi gerekir.</p>
-            <ul class="plain-list">
-              <li>Siteye işletmeye özel bir KVKK Aydınlatma Metni eklenmelidir.</li>
-              <li>Kullanıcıya hangi bilgilerinin neden toplandığı açıkça anlatılmalıdır.</li>
-              <li>Gereğinden fazla kişisel veri toplanmamalıdır.</li>
-              <li>Kişisel veriler güvenli tutulmalıdır.</li>
-              <li>Amacı sona eren veriler için uygun saklama ve silme süreçleri düşünülmelidir.</li>
-              <li>Reklam veya analiz için zorunlu olmayan çerezler varsa çerez yönetimi ayrıca değerlendirilmelidir.</li>
-              <li>Açık rıza gerçekten gerekiyorsa Aydınlatma Metni içine gizlenmemeli, ayrı sunulmalıdır.</li>
-              <li>“Aydınlatma metnini okudum” kaydı alınabilir; ancak metin bir izin sözleşmesi gibi sunulmamalıdır.</li>
-            </ul>
-            <div class="stack">
-              <aside class="callout warning">
-                <strong class="callout-title">Sağlık bilgileri ayrı bir konudur.</strong>
-                <p>“Herhangi bir sakatlığınız var mı?”, “Hastalığınız var mı?” veya “Kullandığınız ilaçlar nelerdir?” gibi sorular sağlık verisi işlenmesine neden olabilir. Sağlık verileri özel nitelikli kişisel veri olduğu için daha sıkı kurallara tabidir. Gerçekten gerekli değilse bu bilgilerin web sitesinde hiç toplanmaması en basit seçenektir.</p>
-              </aside>
-              <aside class="callout info">
-                <strong class="callout-title">Hizmet yurt dışındaysa</strong>
-                <p>Kullanılan sunucu, veritabanı veya diğer hizmetler Türkiye dışında veri saklıyorsa kişisel verilerin yurt dışına aktarılmasıyla ilgili KVKK hükümleri ayrıca değerlendirilmelidir.</p>
-              </aside>
+          <article class="option-card two">
+            <div class="card-head">
+              <span class="number">2</span>
+              <span class="cost">₺₺ Orta</span>
             </div>
+            <h2>Üyelik Sistemli Site</h2>
+            <p class="tagline">Üyeler giriş yapar; rezervasyon ve üyelik işlemleri yapılabilir.</p>
+            <dl class="facts">
+              <div class="fact"><dt>Üye hesabı</dt><dd class="yes">Var</dd></div>
+              <div class="fact"><dt>Veritabanı</dt><dd class="yes">Var</dd></div>
+              <div class="fact"><dt>Aylık gider</dt><dd class="maybe">Var</dd></div>
+            </dl>
+            <p class="best-for"><strong>Uygun:</strong> Üyelerin site üzerinden giriş, rezervasyon veya üyelik takibi yapması isteniyorsa.</p>
           </article>
 
-          <article class="panel wide">
-            <span class="mini-label">Masraflar</span>
-            <div class="split-costs">
-              <div>
-                <h3>Zorunlu veya muhtemel</h3>
-                <ul class="plain-list">
-                  <li>Yıllık alan adı (domain) ücreti</li>
-                  <li>Sunucu / VPS veya kullanılan bulut sisteminin ücreti</li>
-                </ul>
-              </div>
-              <div>
-                <h3>Projeye göre çıkabilecek</h3>
-                <ul class="plain-list">
-                  <li>Ücretli veritabanı hizmeti</li>
-                  <li>Yedekleme hizmeti</li>
-                  <li>E-posta gönderim hizmeti</li>
-                  <li>Güvenlik hizmetleri</li>
-                  <li>SMS veya başka ücretli servisler</li>
-                </ul>
-              </div>
+          <article class="option-card three">
+            <div class="card-head">
+              <span class="number">3</span>
+              <span class="cost">₺₺₺ Değişken</span>
             </div>
-          </article>
-
-          <aside class="callout info wide">
-            <strong class="callout-title">Veritabanı için ayrı ücret şart değil</strong>
-            <p>Veritabanının mutlaka ayrı bir ücretli üyeliği olması gerekmez. Veritabanı sunucuda da çalıştırılabilir. Ancak hazır / yönetilen bir veritabanı servisi tercih edilirse bunun ayrıca aylık ücreti olabilir.</p>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section class="option option-three" id="secenek-3">
-      <div class="wrap">
-        <div class="option-head">
-          <div>
-            <p class="option-kicker">Seçenek 03 · Mevzuat ve kurumsal kapsam</p>
-            <h2>3. Üyelik Sistemi + VERBİS/Kapsamlı KVKK Süreci</h2>
-            <p class="option-subtitle">İşletmenin VERBİS kayıt yükümlülüğüne tabi olması durumunda</p>
-          </div>
-          <div class="cost-stamp">
-            <span>Maliyet seviyesi</span>
-            <strong>₺₺₺ — Duruma göre değişken</strong>
-          </div>
-        </div>
-
-        <div class="lead-box">
-          <p><strong>VERBİS aslında farklı bir web sitesi türü değildir.</strong> Site yine 2. seçenekteki gibi üyelikli bir sistem olabilir. Buradaki fark, işletmenin büyüklüğü veya faaliyetleri nedeniyle kişisel veri mevzuatı açısından ek kayıt ve dokümantasyon yükümlülüklerinin doğmasıdır.</p>
-          <p><strong>VERBİS</strong>, “Veri Sorumluları Sicil Bilgi Sistemi”nin kısaltmasıdır. Kişisel veri işleyen ve mevzuatta belirlenen şartları sağlayan bazı işletmeler, Kişisel Verileri Koruma Kurumu tarafından tutulan bu sisteme kayıt olmak zorundadır.</p>
-        </div>
-
-        <div class="content-grid">
-          <article class="scenario-box wide">
-            <p class="big-statement">Her küçük işletmenin VERBİS’e kaydolması gerekmez.</p>
-            <p>2026 itibarıyla, ana faaliyeti özel nitelikli kişisel veri işlemek olmayan işletmeler aşağıdaki <strong>iki şartı birlikte</strong> sağlıyorsa genel olarak VERBİS kayıt yükümlülüğünden istisnadır:</p>
-            <div class="thresholds">
-              <div class="threshold">
-                <strong>50’den az</strong>
-                <span>yıllık çalışan sayısı</span>
-              </div>
-              <span class="and-badge">VE</span>
-              <div class="threshold">
-                <strong>100 milyon TL’den az</strong>
-                <span>yıllık mali bilanço toplamı</span>
-              </div>
-            </div>
-            <p>Bu iki şarttan biri artık sağlanmıyorsa VERBİS yükümlülüğü ayrıca kontrol edilmelidir. Bu özet, mevzuattaki bütün özel durum ve istisnaları tek başına kapsamaz. Ayrıca VERBİS istisnası, diğer KVKK yükümlülüklerinin de ortadan kalktığı anlamına gelmez.</p>
-          </article>
-
-          <article class="panel">
-            <span class="mini-label">BJJ salonu açısından</span>
-            <h3>Ana faaliyet ile toplanan veri aynı şey değildir</h3>
-            <p>Normal bir spor / BJJ salonunun ana faaliyet konusu sağlık hizmeti sunmak değildir. Bu nedenle yalnızca zaman zaman sağlık veya sakatlık bilgisi alınması, tek başına işletmenin ana faaliyetini “özel nitelikli kişisel veri işleme” haline getirdiği şeklinde yorumlanmamalıdır.</p>
-            <p>Ancak sağlık verisi toplanıyorsa bu verinin kendisi yine özel nitelikli kişisel veridir ve daha dikkatli korunmalıdır.</p>
-          </article>
-
-          <aside class="callout info">
-            <strong class="callout-title">Farklı faaliyetler için ek bilgi</strong>
-            <p>Ana faaliyet konusu özel nitelikli kişisel veri işlemek olan işletmeler için 2026 itibarıyla farklı bir istisna eşiği bulunur: yıllık çalışan sayısının 10’dan az <strong>ve</strong> yıllık mali bilanço toplamının 10 milyon TL’den az olması. Bu, normal bir BJJ salonu için ana kriter olarak değil, genel bilgi olarak değerlendirilmelidir.</p>
-          </aside>
-
-          <article class="panel wide">
-            <span class="mini-label">VERBİS gerekiyorsa</span>
-            <h3>Hangi bilgiler hazırlanır?</h3>
-            <ul class="feature-list two-cols">
-              <li>İşlenen kişisel veri kategorileri belirlenir.</li>
-              <li>Verilerin neden işlendiği belirlenir.</li>
-              <li>Kimlerin verilerinin işlendiği belirlenir.</li>
-              <li>Verilerin kimlerle paylaşılabileceği belirlenir.</li>
-              <li>Yurt dışına veri aktarımı olup olmadığı belirlenir.</li>
-              <li>Verilerin ne kadar süre saklandığı belirlenir.</li>
-              <li>Teknik ve idari güvenlik önlemleri belirlenir.</li>
-              <li>Bu bilgilerle VERBİS bildirimi hazırlanır.</li>
-              <li>Gerekli durumda işletme adına bir irtibat kişisi atanır.</li>
-              <li>Bilgiler değiştikçe gerekli güncellemeler yapılır.</li>
-            </ul>
-          </article>
-
-          <div class="free-banner">
-            <div>
-              <span>Önemli bilgi</span>
-              <strong>VERBİS’e kayıt olmak için devlete ödenen bir kayıt ücreti yoktur.</strong>
-            </div>
-            <div class="free-icon" aria-hidden="true">₺0</div>
-          </div>
-
-          <article class="panel wide">
-            <span class="mini-label">Peki ek masraf neden çıkabilir?</span>
-            <h3>Masraf kayıt sisteminden değil, hazırlık çalışmalarından doğabilir</h3>
-            <p>Masraf VERBİS sisteminin kendisinden değil, işletmenin kişisel veri süreçlerini doğru şekilde düzenlemek için gerekebilecek profesyonel çalışmalardan doğabilir.</p>
-            <ul class="plain-list cost-grid">
-              <li>KVKK danışmanlığı</li>
-              <li>Gerekiyorsa avukat / hukuk danışmanlığı</li>
-              <li>Kişisel veri işleme envanterinin hazırlanması</li>
-              <li>Saklama ve imha süreçlerinin oluşturulması</li>
-              <li>KVKK metinlerinin işletmeye özel hazırlanması</li>
-              <li>Teknik güvenlik iyileştirmeleri</li>
-              <li>Daha kapsamlı sunucu ve veritabanı güvenliği</li>
-              <li>Yedekleme sistemleri</li>
-              <li>Erişim kayıtlarının / logların tutulması</li>
-              <li>Gerekirse yurt dışına veri aktarımı süreçlerinin düzenlenmesi</li>
-            </ul>
-          </article>
-
-          <aside class="callout warning">
-            <strong class="callout-title">Her kalem ayrı masraf değildir</strong>
-            <p>Bunların tamamı her işletmede ayrı ayrı ücretli hizmet alınmasını gerektirmez. İhtiyaç; işletmenin büyüklüğüne, topladığı verilere ve kullandığı sisteme göre değişir.</p>
-          </aside>
-
-          <article class="panel">
-            <span class="mini-label">Muhtemel masraflar</span>
-            <h3>İşletmenin durumuna göre</h3>
-            <ul class="plain-list">
-              <li>Alan adı</li>
-              <li>Sunucu / VPS veya bulut hizmeti</li>
-              <li>Gerekirse veritabanı / güvenlik servisleri</li>
-              <li>Gerektiğinde profesyonel KVKK / hukuk danışmanlığı</li>
-              <li>İhtiyaca göre ek güvenlik ve kayıt sistemleri</li>
-            </ul>
+            <h2>Üyelik + Kapsamlı KVKK / VERBİS</h2>
+            <p class="tagline">Üyelik sistemine ek olarak daha kapsamlı yasal ve kurumsal süreç yürütülür.</p>
+            <dl class="facts">
+              <div class="fact"><dt>Üye hesabı</dt><dd class="yes">Var</dd></div>
+              <div class="fact"><dt>Veritabanı</dt><dd class="yes">Var</dd></div>
+              <div class="fact"><dt>Aylık gider</dt><dd class="maybe">Var</dd></div>
+            </dl>
+            <p class="best-for"><strong>Uygun:</strong> Üyelik sistemi kullanılacak ve işletmenin kapsamlı kişisel veri yükümlülüğü bulunuyorsa.</p>
           </article>
         </div>
-      </div>
-    </section>
 
-    <section class="compare-section" id="karsilastirma">
-      <div class="wrap">
-        <div class="section-heading">
-          <p class="eyebrow">Tek bakışta karar desteği</p>
-          <h2>Seçenekleri Yan Yana Karşılaştırın</h2>
-          <p>“En iyi” tek bir seçenek yoktur. Doğru kapsam, salonun siteyi yalnızca tanıtım için mi yoksa aktif üye yönetimi için mi kullanacağına göre değişir.</p>
-        </div>
-
-        <div class="table-shell" role="region" aria-label="Üç web sitesi seçeneğinin karşılaştırma tablosu" tabindex="0">
-          <table class="compare-table">
+        <div class="matrix-shell" role="region" aria-label="Seçeneklerin kısa karşılaştırması" tabindex="0">
+          <table class="matrix">
             <thead>
               <tr>
-                <th scope="col">Kriter</th>
-                <th scope="col">1. Basit Tanıtım</th>
-                <th scope="col">2. Üyelik Sistemi</th>
-                <th scope="col">3. Üyelik + VERBİS / Kapsamlı KVKK</th>
+                <th scope="col">Kısa karşılaştırma</th>
+                <th scope="col">1. Tanıtım</th>
+                <th scope="col">2. Üyelik</th>
+                <th scope="col">3. Kapsamlı süreç</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">Kullanıcı hesabı</th>
-                <td><span class="status no">Yok</span></td>
-                <td><span class="status yes">Var</span></td>
-                <td><span class="status yes">Var</span></td>
-              </tr>
-              <tr>
-                <th scope="row">WhatsApp iletişim</th>
-                <td><span class="status yes">Var</span></td>
-                <td><span class="status maybe">Eklenebilir</span></td>
-                <td><span class="status maybe">Eklenebilir</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Veritabanı</th>
-                <td><span class="status no">Yok</span></td>
-                <td><span class="status yes">Var</span></td>
-                <td><span class="status yes">Var</span></td>
-              </tr>
-              <tr>
-                <th scope="row">Sunucu / VPS</th>
-                <td>Gerekmez</td>
-                <td>Genellikle gerekir veya bulut servis kullanılır</td>
-                <td>Genellikle gerekir veya bulut servis kullanılır</td>
-              </tr>
-              <tr>
-                <th scope="row">KVKK Aydınlatma Süreci</th>
-                <td>Sitede doğrudan kişisel veri toplanmıyorsa çok daha sınırlı</td>
-                <td>Gerekli</td>
-                <td>Gerekli ve daha kapsamlı şekilde yönetilir</td>
-              </tr>
-              <tr>
-                <th scope="row">VERBİS</th>
-                <td>İşletmenin genel durumuna göre değerlendirilir</td>
-                <td>İşletmenin genel durumuna göre değerlendirilir</td>
-                <td>Kayıt yükümlülüğünün bulunduğu senaryo</td>
-              </tr>
-              <tr>
-                <th scope="row">Aylık teknik gider</th>
-                <td>Yok veya çok düşük</td>
-                <td>Var</td>
-                <td>Var</td>
-              </tr>
-              <tr>
-                <th scope="row">Kurulum ve yönetim karmaşıklığı</th>
-                <td>Çok düşük</td>
-                <td>Orta</td>
-                <td>Yüksek</td>
-              </tr>
-              <tr>
-                <th scope="row">En uygun olduğu durum</th>
-                <td>İnternette profesyonel şekilde görünmek ve müşterileri WhatsApp’a yönlendirmek yeterliyse</td>
-                <td>Üyelerin site üzerinden işlem yapması isteniyorsa</td>
-                <td>Üyelik sistemi kullanılacak ve işletmenin VERBİS / kapsamlı kişisel veri uyumluluğu yükümlülüğü bulunuyorsa</td>
-              </tr>
+              <tr><th scope="row">WhatsApp</th><td class="yes">Var</td><td>Eklenebilir</td><td>Eklenebilir</td></tr>
+              <tr><th scope="row">Sunucu / VPS</th><td class="no">Gerekmez</td><td>Genellikle gerekir</td><td>Genellikle gerekir</td></tr>
+              <tr><th scope="row">KVKK süreci</th><td>Daha sınırlı</td><td class="maybe">Gerekli</td><td class="maybe">Daha kapsamlı</td></tr>
+              <tr><th scope="row">VERBİS</th><td>Duruma göre</td><td>Duruma göre</td><td>Kayıt gereken senaryo</td></tr>
+              <tr><th scope="row">Yönetim zorluğu</th><td>Düşük</td><td>Orta</td><td>Yüksek</td></tr>
             </tbody>
           </table>
         </div>
 
-        <div class="decision-note">
-          <span class="number">→</span>
-          <p><strong>Kısa karar kuralı:</strong> Yalnızca salonu tanıtmak ve iletişim almak istiyorsanız 1. seçenek; üyelerin giriş yapıp işlem yapmasını istiyorsanız 2. seçenek; üyelik sistemine ek olarak işletmenin kayıt ve kapsamlı uyumluluk yükümlülüğü bulunuyorsa 3. seçenek değerlendirilir.</p>
+        <p class="decision-line"><strong>Kısaca:</strong> Yalnızca tanıtım için 1; üyelerin işlem yapması için 2; üyelikle birlikte kapsamlı veri uyumluluğu gerekiyorsa 3. seçenek değerlendirilir.</p>
+      </div>
+    </section>
+
+    <section class="details-area" aria-labelledby="details-title">
+      <div class="wrap">
+        <div class="details-heading">
+          <h2 id="details-title">Ayrıntılı Bilgiler</h2>
+          <p>İlgilendiğiniz seçeneğe dokunarak kapsamını, masraflarını ve dikkat edilmesi gereken noktaları okuyabilirsiniz.</p>
+        </div>
+
+        <div class="detail-list">
+          <details>
+            <summary>
+              <span class="number">1</span>
+              <span>
+                <span class="summary-title">Basit Tanıtım Sitesi</span>
+                <span class="summary-sub">En düşük maliyetli ve en kolay seçenek</span>
+              </span>
+              <span class="open-label">Ayrıntıları göster</span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="detail-body">
+              <p class="detail-lead">Site tamamen tanıtım amaçlı çalışır. Kullanıcı hesabı, giriş sistemi veya üyelerin bilgilerinin tutulduğu bir veritabanı bulunmaz. İletişim kurmak isteyen kişi WhatsApp butonuyla doğrudan salona ulaşır.</p>
+              <div class="content-grid">
+                <article class="box">
+                  <h3>Sitede neler olabilir?</h3>
+                  <ul class="clean two-cols">
+                    <li>Salon hakkında bilgiler</li><li>Eğitmenler</li><li>Ders programı</li><li>Fotoğraflar</li><li>Adres ve iletişim</li><li>Fiyat bilgileri</li><li>Sosyal medya bağlantıları</li><li>WhatsApp butonu</li>
+                  </ul>
+                </article>
+                <article class="box">
+                  <h3>Nasıl çalışır?</h3>
+                  <p>Site, ücretsiz bir statik web barındırma hizmetinde tutulabilir. Yani internette açık kalması için ayrıca aylık sunucu kiralamak gerekmez.</p>
+                  <p><strong>Statik site:</strong> Hazır sayfaların yayınlandığı, arka planda üyelik sistemi çalıştırmayan basit yapı.</p>
+                </article>
+                <article class="box">
+                  <h3>Masraflar</h3>
+                  <h4>Zorunlu</h4>
+                  <ul class="clean"><li>Yıllık alan adı (sitenin internet adresi)</li></ul>
+                  <h4>Genellikle gerekmez</h4>
+                  <ul class="clean"><li>Aylık sunucu / VPS</li><li>Veritabanı</li><li>Kullanıcı hesabı altyapısı</li><li>Ek üyelik güvenliği servisleri</li></ul>
+                </article>
+                <article class="box">
+                  <h3>Avantajı ve sınırı</h3>
+                  <ul class="clean"><li>Ekonomik ve az bakım gerektirir.</li><li>Hesap ve veritabanı olmadığı için güvenlik yönetimi daha basittir.</li><li>Profesyonel görünürlük ve hızlı WhatsApp iletişimi sağlar.</li></ul>
+                  <div class="notice" style="margin-top:12px">
+                    <strong>Sınırı</strong>
+                    <p>Üye girişi, ders rezervasyonu, kişisel panel ve üyelik takibi bulunmaz.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </details>
+
+          <details class="two">
+            <summary>
+              <span class="number">2</span>
+              <span>
+                <span class="summary-title">Üyelik Sistemli Web Sitesi</span>
+                <span class="summary-sub">Üyelerin hesap açıp siteyi aktif kullandığı sistem</span>
+              </span>
+              <span class="open-label">Ayrıntıları göster</span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="detail-body">
+              <p class="detail-lead">Bu seçenek yalnızca bir tanıtım sayfası değildir. Arka planda çalışan bir sistem vardır; üyeler hesap oluşturabilir, giriş yapabilir ve kendilerine özel özellikleri kullanabilir.</p>
+              <div class="content-grid">
+                <article class="box full">
+                  <h3>Örnek özellikler</h3>
+                  <ul class="clean two-cols">
+                    <li>Hesap oluşturma ve giriş / çıkış</li><li>Şifre yenileme</li><li>Üye profili</li><li>Ders programı</li><li>Ders rezervasyonu</li><li>Üyelik / paket durumu</li><li>Yönetici paneli</li><li>Üye yönetimi ve duyurular</li>
+                  </ul>
+                </article>
+
+                <div class="terms">
+                  <article class="term"><strong>Sunucu / VPS</strong><p>Üyelik, giriş ve rezervasyon işlemlerini arka planda sürekli çalıştıran sistemdir. VPS yerine uygun bir hazır bulut hizmeti de kullanılabilir.</p></article>
+                  <article class="term"><strong>Veritabanı</strong><p>Üye hesaplarının ve gerekli bilgilerin güvenli tutulduğu yerdir. Sunucu içinde veya ayrı, yönetilen bir hizmette çalışabilir.</p></article>
+                  <article class="term"><strong>Güvenlik</strong><p>Şifreler okunabilir saklanmamalı; HTTPS, erişim önlemleri, güncelleme ve yedekleme uygulanmalıdır.</p></article>
+                </div>
+
+                <article class="box full">
+                  <h3>KVKK açısından</h3>
+                  <p>Ad, soyad, e-posta ve telefon gibi bilgiler tutuluyorsa kişisel veri işlenmiş olur.</p>
+                  <ul class="clean two-cols">
+                    <li>İşletmeye özel Aydınlatma Metni hazırlanır.</li><li>Hangi bilginin neden toplandığı açıklanır.</li><li>Gereksiz veri toplanmaz.</li><li>Veriler güvenli tutulur.</li><li>Saklama ve silme süreçleri düşünülür.</li><li>Zorunlu olmayan çerezler ayrıca değerlendirilir.</li><li>Gerekli açık rıza ayrı sunulur.</li><li>Aydınlatma metni izin sözleşmesi gibi gösterilmez.</li>
+                  </ul>
+                </article>
+
+                <div class="notice">
+                  <strong>Sağlık bilgileri ayrı bir konudur</strong>
+                  <p>Sakatlık, hastalık veya ilaç bilgisi sağlık verisidir ve daha sıkı kurallara tabidir. Gerçekten gerekmiyorsa web sitesinde hiç toplanmaması en basit yoldur.</p>
+                </div>
+                <div class="notice">
+                  <strong>Yurt dışındaki hizmetler</strong>
+                  <p>Sunucu veya veritabanı Türkiye dışında veri saklıyorsa yurt dışına veri aktarımı hükümleri ayrıca değerlendirilmelidir.</p>
+                </div>
+
+                <article class="box full">
+                  <h3>Muhtemel masraflar</h3>
+                  <ul class="clean two-cols">
+                    <li>Yıllık alan adı</li><li>Sunucu / VPS veya bulut sistemi</li><li>Yönetilen veritabanı</li><li>Yedekleme</li><li>E-posta / SMS gönderimi</li><li>Güvenlik ve diğer ücretli servisler</li>
+                  </ul>
+                  <p style="margin-top:12px"><strong>Not:</strong> Veritabanının ayrı ücretli bir hizmet olması şart değildir; sunucu içinde de çalışabilir.</p>
+                </article>
+              </div>
+            </div>
+          </details>
+
+          <details class="three">
+            <summary>
+              <span class="number">3</span>
+              <span>
+                <span class="summary-title">Üyelik Sistemi + VERBİS / Kapsamlı KVKK</span>
+                <span class="summary-sub">İşletmenin daha kapsamlı yükümlülüğe tabi olduğu durum</span>
+              </span>
+              <span class="open-label">Ayrıntıları göster</span>
+              <span class="chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="detail-body">
+              <p class="detail-lead"><strong>VERBİS farklı bir web sitesi türü değildir.</strong> Site yine 2. seçenekteki gibi üyelikli olabilir. Fark; işletmenin büyüklüğü veya faaliyetleri nedeniyle ek kayıt, dokümantasyon ve uyumluluk çalışmaları gerekmesidir. VERBİS, “Veri Sorumluları Sicil Bilgi Sistemi”nin kısaltmasıdır.</p>
+              <div class="content-grid">
+                <article class="box full">
+                  <h3>Her küçük işletmenin VERBİS’e kaydolması gerekmez</h3>
+                  <p>2026 itibarıyla ana faaliyeti özel nitelikli kişisel veri işlemek olmayan işletmeler aşağıdaki iki şartı birlikte sağlıyorsa genel olarak kayıt yükümlülüğünden istisnadır:</p>
+                  <div class="thresholds">
+                    <div class="threshold"><strong>50’den az</strong><span>yıllık çalışan</span></div>
+                    <span class="and">VE</span>
+                    <div class="threshold"><strong>100 milyon TL’den az</strong><span>yıllık mali bilanço</span></div>
+                  </div>
+                  <p>Bu şartlardan biri sağlanmıyorsa yükümlülük ayrıca kontrol edilmelidir. Bu özet bütün özel istisnaları kapsamaz; VERBİS istisnası diğer KVKK yükümlülüklerini kaldırmaz.</p>
+                </article>
+
+                <article class="box">
+                  <h3>BJJ salonu açısından</h3>
+                  <p>Normal bir spor / BJJ salonunun ana faaliyeti sağlık hizmeti değildir. Ara sıra sağlık veya sakatlık bilgisi alınması tek başına ana faaliyeti değiştirmez; ancak toplanan sağlık verisi yine özel nitelikli kişisel veridir.</p>
+                </article>
+                <article class="box">
+                  <h3>Diğer faaliyetler için bilgi</h3>
+                  <p>Ana faaliyeti özel nitelikli veri işlemek olan işletmelerde farklı istisna eşiği bulunur: yıllık çalışan sayısı 10’dan az <strong>ve</strong> yıllık mali bilanço 10 milyon TL’den az. Bu, normal BJJ salonu için ana kriter değildir.</p>
+                </article>
+
+                <article class="box full">
+                  <h3>VERBİS gerekiyorsa neler hazırlanır?</h3>
+                  <ul class="clean two-cols">
+                    <li>İşlenen veri kategorileri</li><li>Veri işleme amaçları</li><li>Verisi işlenen kişi grupları</li><li>Verilerin paylaşılabileceği taraflar</li><li>Yurt dışı aktarımı</li><li>Saklama süreleri</li><li>Teknik ve idari güvenlik önlemleri</li><li>VERBİS bildirimi</li><li>Gerekirse irtibat kişisi</li><li>Değişiklik oldukça güncelleme</li>
+                  </ul>
+                </article>
+
+                <div class="notice">
+                  <strong class="free">VERBİS kaydı ücretsizdir</strong>
+                  <p>VERBİS’e kayıt olmak için devlete ödenen bir kayıt ücreti yoktur.</p>
+                </div>
+                <div class="notice">
+                  <strong>Ek masraf nereden çıkabilir?</strong>
+                  <p>Masraf sistemden değil; kişisel veri süreçlerini düzenlemek için gerekebilecek teknik, hukuki veya danışmanlık çalışmalarından doğabilir.</p>
+                </div>
+
+                <article class="box full">
+                  <h3>Duruma göre çıkabilecek çalışmalar ve masraflar</h3>
+                  <ul class="clean two-cols">
+                    <li>KVKK / hukuk danışmanlığı</li><li>Kişisel veri işleme envanteri</li><li>Saklama ve imha süreçleri</li><li>İşletmeye özel KVKK metinleri</li><li>Teknik güvenlik iyileştirmeleri</li><li>Sunucu, veritabanı ve yedekleme</li><li>Erişim kayıtlarının tutulması</li><li>Yurt dışı aktarım süreçleri</li>
+                  </ul>
+                  <p style="margin-top:12px">Bunların tamamı her işletmede ayrı ücretli hizmet gerektirmez. İhtiyaç; işletmenin büyüklüğüne, topladığı verilere ve kullandığı sisteme göre değişir.</p>
+                </article>
+              </div>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -1410,8 +760,7 @@
 
   <footer>
     <div class="wrap">
-      <div class="footer-line">Genel bilgilendirme notu</div>
-      <p class="disclaimer">Bu sayfadaki KVKK ve VERBİS açıklamaları genel bilgilendirme amacı taşır. İşletmenin kesin yükümlülükleri; çalışan sayısı, mali yapısı, işlenen kişisel verilerin türü, kullanılan hizmet sağlayıcılar ve veri işleme süreçlerine göre değişebilir. Gerektiğinde güncel mevzuat ve profesyonel görüş doğrultusunda ayrıca değerlendirme yapılmalıdır.</p>
+      <p>Bu sayfadaki KVKK ve VERBİS açıklamaları genel bilgilendirme amacı taşır. İşletmenin kesin yükümlülükleri; çalışan sayısı, mali yapısı, işlenen kişisel verilerin türü, kullanılan hizmet sağlayıcılar ve veri işleme süreçlerine göre değişebilir. Gerektiğinde güncel mevzuat ve profesyonel görüş doğrultusunda ayrıca değerlendirme yapılmalıdır.</p>
     </div>
   </footer>
 </body>
