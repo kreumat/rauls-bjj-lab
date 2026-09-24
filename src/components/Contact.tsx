@@ -1,4 +1,5 @@
 import { useLanguage } from '../i18n/LanguageContext';
+import { whatsappUrl } from '../lib/whatsapp';
 
 export function Contact() {
   const { t } = useLanguage();
@@ -22,7 +23,7 @@ export function Contact() {
           </p>
           <div className="mt-8 flex flex-col gap-3">
             <a
-              href="https://wa.me/yusufxterzi"
+              href={whatsappUrl()}
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-between rounded-full bg-white px-6 py-4 text-xs font-extrabold uppercase tracking-[0.12em] text-black transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"

@@ -1,5 +1,6 @@
 import { assetUrl } from '../lib/asset';
 import { useLanguage } from '../i18n/LanguageContext';
+import { whatsappUrl } from '../lib/whatsapp';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -14,7 +15,7 @@ export function Footer() {
             className="h-11 w-11 rounded-full object-cover"
           />
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.16em]">Raul&apos;s BJJ LAB</p>
+            <p lang="en" className="text-sm font-black uppercase tracking-[0.16em]">Roger Gracie Bursa</p>
             <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-white/38">
               {t.footer.discipline}
             </p>
@@ -23,9 +24,9 @@ export function Footer() {
 
         <div className="flex flex-wrap gap-x-6 gap-y-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/45">
           <a href="#top" className="hover:text-white">{t.footer.top}</a>
-          <a href="https://wa.me/yusufxterzi" target="_blank" rel="noreferrer" className="hover:text-white">WhatsApp</a>
+          <a href={whatsappUrl()} target="_blank" rel="noreferrer" className="hover:text-white">WhatsApp</a>
           <span className="text-white/25" aria-label={`${t.footer.instagram} — ${t.contact.soon}`}>{t.footer.instagram}</span>
-          <span>© 2026 Raul&apos;s BJJ LAB</span>
+          <span>© 2026 Roger Gracie Bursa</span>
         </div>
       </div>
     </footer>

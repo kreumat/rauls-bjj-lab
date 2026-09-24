@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import { whatsappUrl } from '../lib/whatsapp';
 
 function WhatsAppIcon({ className = '' }: { className?: string }) {
   return (
@@ -55,8 +56,8 @@ export function WhatsAppWidget() {
                 <WhatsAppIcon className="h-6 w-6" />
               </span>
               <div className="min-w-0 pt-0.5">
-                <p className="text-[9px] font-extrabold uppercase tracking-[0.19em] text-white/45">
-                  Raul&apos;s BJJ LAB
+                <p lang="en" className="text-[9px] font-extrabold uppercase tracking-[0.19em] text-white/45">
+                  Roger Gracie Bursa
                 </p>
                 <h2 id="whatsapp-contact-title" className="mt-1 text-lg font-black leading-tight">
                   {t.whatsappWidget.title}
@@ -78,7 +79,7 @@ export function WhatsAppWidget() {
               {t.whatsappWidget.description}
             </p>
             <a
-              href="https://wa.me/yusufxterzi"
+              href={whatsappUrl()}
               target="_blank"
               rel="noreferrer"
               className="mt-5 flex items-center justify-between rounded-full bg-[#25D366] px-5 py-3.5 text-xs font-extrabold uppercase tracking-[0.1em] text-[#081c0f] transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#128c4b] focus-visible:ring-offset-2"

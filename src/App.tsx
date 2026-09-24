@@ -6,6 +6,7 @@ import { Hero } from './components/Hero';
 import { Programs } from './components/Programs';
 import { QuickLinks } from './components/QuickLinks';
 import { Schedule } from './components/Schedule';
+import { VideoShop } from './components/VideoShop';
 import { WhatsAppWidget } from './components/WhatsAppWidget';
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <QuickLinks />
       <Academy />
       <Programs />
+      <VideoShop />
       <BeltJourney />
       <Schedule />
       <Contact />

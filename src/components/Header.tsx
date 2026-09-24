@@ -7,6 +7,7 @@ export function Header() {
   const links = [
     { label: t.nav.academy, href: '#akademi' },
     { label: t.nav.programs, href: '#programlar' },
+    { label: t.nav.shop, href: '#magaza' },
     { label: t.nav.belts, href: '#kusaklar' },
     { label: t.nav.contact, href: '#iletisim' },
   ];
@@ -26,8 +27,8 @@ export function Header() {
               className="h-full w-full object-cover"
             />
           </span>
-          <span className="text-sm font-bold uppercase tracking-[0.16em] max-[360px]:hidden">
-            Raul&apos;s BJJ LAB
+          <span lang="en" className="text-sm font-bold uppercase tracking-[0.16em] max-[520px]:hidden">
+            Roger Gracie Bursa
           </span>
         </a>
 

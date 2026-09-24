@@ -40,9 +40,9 @@ export function Hero() {
 
           <div className="grid items-end gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
             <div className="min-w-0 overflow-visible pb-2">
-              <h1 className="hero-title flex max-w-5xl flex-col gap-[0.06em] text-[clamp(3.5rem,14vw,11rem)] font-black uppercase leading-[0.84] tracking-[-0.045em] text-white sm:leading-[0.8] sm:tracking-[-0.06em]">
-                <span className="block">Raul&apos;s</span>
-                <span className="text-outline-white block">BJJ LAB</span>
+              <h1 lang="en" className="hero-title flex max-w-5xl flex-col gap-[0.06em] text-[clamp(3.5rem,14vw,11rem)] font-black uppercase leading-[0.84] tracking-[-0.045em] text-white sm:leading-[0.8] sm:tracking-[-0.06em]">
+                <span className="block">Roger Gracie</span>
+                <span className="text-outline-white block">Bursa</span>
               </h1>
             </div>
 

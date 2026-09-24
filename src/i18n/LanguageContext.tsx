@@ -11,13 +11,13 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>(() => {
-    const saved = window.localStorage.getItem('rauls-bjj-lab-language');
+    const saved = window.localStorage.getItem('roger-gracie-bursa-language');
     return saved === 'en' || saved === 'ru' || saved === 'tr' ? saved : 'tr';
   });
 
   useEffect(() => {
     document.documentElement.lang = language;
-    window.localStorage.setItem('rauls-bjj-lab-language', language);
+    window.localStorage.setItem('roger-gracie-bursa-language', language);
   }, [language]);
 
   const value = useMemo(

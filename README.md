@@ -1,4 +1,4 @@
-# Raul's BJJ LAB — GitHub Pages sürümü
+# Roger Gracie Bursa — GitHub Pages sürümü
 
 Bu klasör, ana `site` projesine dokunulmadan GitHub Pages için hazırlanmıştır. Vite çıktısı göreli dosya yolları kullandığı için hem kullanıcı hem de proje Pages adreslerinde çalışır.
 

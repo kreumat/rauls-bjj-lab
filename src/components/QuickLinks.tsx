@@ -15,7 +15,7 @@ export function QuickLinks() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 justify-items-center gap-3 sm:gap-5 lg:grid-cols-4">
+        <div className="grid grid-cols-2 justify-items-center gap-3 sm:gap-5 lg:grid-cols-5">
           {t.quick.links.map((link, index) => (
             <a
               key={link.href}
